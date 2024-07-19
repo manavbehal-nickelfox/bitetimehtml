@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <title>Order Details</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E5E5E5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 972px;
+            height: 1258px;
+            background-color: #FFF;
+            padding: 0px 34px 20px 33px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .headerRight {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 21px 0px 14px 0px;
+        }
+
+        .headerLeft {
+            padding: 21px 0px 14px 0px;
+        }
+
+        .order-number {
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 31.2px;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-logo {
+            height: auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .brand-logo img {
+            width: 124px;
+            height: auto;
+        }
+
+        .delivery-time {
+            color: black;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 24.2px;
+            letter-spacing: -0.5px;
+            text-align: right;
+        }
+
+        .verticalline {
+            color: #00000066;
+            margin: 0px 5px;
+        }
+
+        .horizontal-line {
+            height: 2px;
+            width: 100%;
+            background-color: #E6E6E6;
+        }
+
+        .vertical-line {
+            height: 188px;
+            width: 2px;
+            background-color: #E6E6E6;
+            margin: 25px 14px 0px 20px;
+        }
+
+        .board {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 31.2px;
+            letter-spacing: -0.5px;
+        }
+
+        .section {
+            margin-top: 16px;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 28px;
+            letter-spacing: -0.5px;
+        }
+
+        .details {
+            display: flex;
+        }
+
+        .orderdetailsdiv {
+            width: 296.94px;
+        }
+
+        .detailstitle {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 24.2px;
+            letter-spacing: -0.5px;
+            width: 296.94px;
+            height: 24.88px;
+            margin: 14px 0px 9.12px 0px;
+        }
+
+        .leavetitle {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 33.89px;
+            letter-spacing: -0.5px;
+            width: 296.94px;
+            height: 34px;
+            text-align: right;
+            color: #FF0000;
+            margin: 4px 0px 9px 0px;
+            vertical-align: bottom;
+        }
+
+        .details table {
+            width: 296.94px;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        .instructions-table {
+            width: 592px !important;
+        }
+
+        /* .instructions-table th{
+            width:0px !important;
+        } */
+        .instructions-table td {
+            width: 592px !important;
+            padding-right: 20px !important;
+
+        }
+
+        .details th,
+        .details td {
+            padding: 0px;
+            padding-bottom: 4px;
+            text-align: left;
+            vertical-align: baseline;
+        }
+
+        .details th {
+            background-color: none;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: -0.5px;
+            width: 100px;
+        }
+
+        .orderdetails th {
+            width: 84px;
+        }
+
+        .details td {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: -0.5px;
+            width: 200px;
+        }
+
+        .delivery-details-container {
+            width: 640px;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .main-details,
+        .right-details {
+            width: 296px;
+        }
+
+        /* .full-width {
+            width: 100%;
+            margin-top: 10px;
+        } */
+        /* .instructions-cell {
+            width: 100%;
+            padding-right: 8px;
+            box-sizing: border-box;
+        } */
+        .headingleaving {
+            display: flex;
+        }
+
+        .right-details th {
+            width: 67px;
+        }
+
+        .right-details {
+
+            margin-left: 41.02px;
+        }
+
+
+        .instructions h3 {
+            /* margin-top: 20px; */
+            /* background-color: #f9f9f9; */
+            /* padding: 10px; */
+            /* border: 1px solid #ddd; */
+            margin: 5px 0px;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 14px;
+            letter-spacing: -0.5px;
+            color: #000;
+        }
+
+        .instructions p {
+            margin: 5px 0px;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: -0.5px;
+            color: #000;
+        }
+
+
+
+        .tablecontainer {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            vertical-align: center;
+            border-spacing: 0px;
+        }
+
+
+        .tablecontainer td {
+            border: none;
+            padding: 0px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .tablecontainer th {
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0px;
+            vertical-align: middle;
+            text-align: center;
+            color: #A7A7A7;
+
+            font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .items {
+            text-align: left !important;
+        }
+
+
+        .tablecontainer .row-head {
+            background-color: #fff !important;
+        }
+
+
+        /* .tablecontainer input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            Add border-radius 
+        border: 1px solid #ACACAC;
+        }
+
+        .tablecontainer input[type="checkbox"]+label:before {
+            border-radius: 4px;
+             Add border-radius 
+            border: 1px solid #ACACAC;
+        }  */
+
+        .tablecontainer .checkbox-cell input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 1px solid #ACACAC;
+            border-radius: 4px;
+            outline: none;
+
+            cursor: pointer;
+        }
+
+
+
+        .tablecontainer .checkbox-cell input[type="checkbox"]:checked::before {
+
+            display: block;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        .tablecontainer td ul {
+            margin: 0;
+            padding-left: 35px;
+
+        }
+
+        .tablecontainer li {
+            color: #000;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18.62px;
+            letter-spacing: -0.5px;
+        }
+
+        .tablecontainer .checkbox-cell input[type="checkbox" i] {
+            margin: 0;
+        }
+
+        /* .tablecontainer tr:nth-child(odd) {
+            background-color: #f3f3f3;
+            height: 18px;
+        } */
+
+        .tablecontainer tr:nth-child(even) {
+            background-color: #ffffff;
+            height: 28px;
+        }
+
+        .tablecontainer tr:first-child {
+            height: 29px;
+        }
+
+        .tablecontainer tfoot {
+
+            border-top: 2px solid #E6E6E6;
+            border-bottom: 2px solid #E6E6E6;
+            height: 54px;
+        }
+
+        .tablecontainer tfoot tr h3 {
+            margin: 0;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 17.5px;
+            letter-spacing: -0.5px;
+        }
+
+        .tablecontainer tfoot tr p {
+            margin: 0;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18.48px;
+            letter-spacing: -0.5px;
+        }
+
+        .tablecontainer tr.list-row-odd {
+            background-color: #f3f3f3;
+            height: 18px;
+        }
+
+        /* .tablecontainer tr.list-row-even {
+            background-color: #ffffff;
+            height: 28px;
+        } */
+
+        .tablecontainer .checkbox-cell {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        /* .tablecontainer .checkbox-cell input[type="checkbox"] {
+            margin: 0;
+            vertical-align: middle;
+            position: relative;
+            top: -1px;
+            /* Fine-tune vertical alignment if needed */
+        /* } */
+
+        .Quantity {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 17.5px;
+            letter-spacing: -0.5px;
+            text-align: center !important;
+            vertical-align: middle !important;
+        }
+
+        .headingtable {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 17.5px;
+            letter-spacing: -0.5px;
+        }
+
+        .special-instruction {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18.62px;
+            letter-spacing: -0.5px;
+
+        }
+
+
+        .highlights {
+            width: 81px;
+            height: 19px;
+            flex-shrink: 0;
+            color: #000;
+            background-color: #D9D9D9;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 18.62px;
+            letter-spacing: -0.5px;
+        }
+
+        .secondrowhighlight {
+            background-color: yellow;
+        }
+
+        .tablecontainer tr.first-data-row td {
+            padding-top: 6px;
+        }
+
+        .tablecontainer .col-prepared,
+        .tablecontainer .col-finished{
+            width: 5%;
+        }
+
+        .tablecontainer .col-quantity {
+            width: 7%;
+        }
+
+        .tablecontainer .col-packed {
+            width: 10%;
+        }
+
+       
+
+        .tablecontainer .col-items {
+            width: 55%;
+        }
+
+        .separator-row {
+  height: 2px;
+}
+.separator-row td {
+  padding: 0;
+  border-top: 2px solid #E6E6E6;
+}
+.item-row:last-of-type {
+  border-bottom: 2px solid #E6E6E6;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="headerLeft">
+                <div class="order-number">Order #B6T-E2G<span class="verticalline board">|</span><span
+                        class="board">Board Meeting</span></div>
+                <div class="section">
+                    Delivery on Monday, June 20 at 11:30am
+                </div>
+            </div>
+            <div class="headerRight">
+                <div class="brand-logo"><img src="CutnQue.svg" alt="Cut n Que Logo"></div>
+                <div class="delivery-time">Bitetime catering order</div>
+            </div>
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="details">
+            <div class="orderdetailsdiv">
+                <h1 class="detailstitle">Order details</h1>
+                <table class="orderdetails">
+                    <tr>
+                        <th>ORDER DATE</th>
+                        <td>Monday, May 2, 2023</td>
+                    </tr>
+                    <tr>
+                        <th>CUSTOMER</th>
+                        <td>Jena Garrett | Stampli<br>(615) 452-2421</td>
+                    </tr>
+                    <tr>
+                        <th>KITCHEN</th>
+                        <td>1500 2nd ave S<br>Nashville, TN 37210</td>
+                    </tr>
+                    <tr>
+                        <th>BRAND</th>
+                        <td>Cut-n-que</td>
+                    </tr>
+                    <tr>
+                        <th>GUESTS</th>
+                        <td>100</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="vertical-line"></div>
+            <div>
+                <div class="headingleaving">
+                    <h1 class="detailstitle">Delivery details</h1>
+                    <h1 class="leavetitle"> Leave by: 10:30am</h1>
+                </div>
+                <div class="delivery-details-container">
+                    <table class="delivery-details main-details">
+                        <tr>
+                            <th>DELIVERY DATE</th>
+                            <td>Monday, June 20, 2023</td>
+                        </tr>
+                        <tr>
+                            <th>ARRIVAL TIME</th>
+                            <td>11:30am</td>
+                        </tr>
+                        <tr>
+                            <th>LOCATION</th>
+                            <td>Stampli HQ</td>
+                        </tr>
+                        <tr>
+                            <th>ADDRESS</th>
+                            <td>375 Deaderick Street<br>Nashville, TN 35006</td>
+                        </tr>
+                    </table>
+                    <table class="delivery-details right-details">
+                        <tr>
+                            <th>DRIVER</th>
+                            <td>John Smith</td>
+                        </tr>
+                        <tr>
+                            <th>CONTACT</th>
+                            <td>Jane Smith-Jackson<br>(615) 235-1349</td>
+                        </tr>
+                        <tr>
+                            <th>DISTANCE</th>
+                            <td>3.5 miles</td>
+                        </tr>
+                    </table>
+                    <table class="instructions-table full-width">
+                        <tr>
+                            <th>INSTRUCTIONS</th>
+                            <td class="instructions-cell">Drive around the block several times because these
+                                instructions can be lengthy and we need some space here.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <table class="tablecontainer">
+
+            <tr>
+                <th class="col-prepared">Prepared</th>
+                <th class="col-finished">Finished</th>
+                <th class="col-quantity">Quantity</th>
+                <th class="items col-items">Items</th>
+                <th class="col-packed">Packed out</th>
+            </tr>
+            <!-- row1 -->
+            <tr class="item-row row-head  first-data-row">
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="Quantity ">100</td>
+                <td class="headingtable">Pulled BBQ chicken <span class="highlights">TRAY</span> </td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+            </tr>
+            <tr class="item-row list-row">
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td></td>
+                <td>
+                    <ul>
+                        <li>Sides: 100 x Homemade mac 'n' cheese __________</li>
+                    </ul>
+                </td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+            </tr>
+            <tr class="item-row list-row">
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td></td>
+                <td>
+                    <ul>
+                        <li>Sides: 100 x Southern potato salad __________</li>
+                    </ul>
+                </td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+            </tr>
+
+            <tr class="item-row list-row">
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td></td>
+                <td>
+                    <ul>
+                        <li>Sauces: 100 x Honey bourbon BBQ ____________________</li>
+                    </ul>
+                </td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+            </tr>
+
+            <tr class="item-row list-row">
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td></td>
+                <td>
+                    <ul>
+                        <li>Desserts: 50 x Ghirardelli brownie __________</li>
+                    </ul>
+                </td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+            </tr>
+
+            <tr class="item-row list-row">
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td></td>
+                <td>
+                    <ul>
+                        <li>Cornbread with butter __________</li>
+                    </ul>
+                </td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+            </tr>
+
+            <tr class="item-row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="special-instruction">
+
+                    Special instructions: No onions
+
+                </td>
+                <td></td>
+            </tr>
+
+            <tr class="separator-row">
+                <td colspan="5"></td>
+              </tr>
+
+            <!-- row2 -->
+            <tr class="item-row row-head">
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="Quantity">50</td>
+                <td class="headingtable">Pulled BBQ chicken <span
+                        class="highlights secondrowhighlight ">INDIVIDUAL</span></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+            </tr>
+            <tr class="item-row list-row ">
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td></td>
+                <td>
+                    <ul>
+                        <li>Sides: 50 x Homemade mac 'n' cheese __________</li>
+                    </ul>
+                </td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+            </tr>
+            <tr class="item-row list-row">
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td></td>
+                <td>
+                    <ul>
+                        <li>Sides: 50 x Southern potato salad __________</li>
+                    </ul>
+                </td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+            </tr>
+            <tr class="item-row list-row">
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td></td>
+                <td>
+                    <ul>
+                        <li>Sauces: 50 x Honey bourbon BBQ __________</li>
+                    </ul>
+                </td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+            </tr>
+            <tr class="item-row list-row">
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td></td>
+                <td>
+                    <ul>
+                        <li>Desserts: 50 x Ghirardelli brownie __________</li>
+                    </ul>
+                </td>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+            </tr>
+
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="6">
+                        <h3>Tableware</h3>
+                        <p>Include: Cutlery with napkins</p>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="instructions">
+            <h3>SPECIAL INSTRUCTIONS</h3>
+            <p>No peppers and onions. Drive around the block several times because these instructions can be lengthy and
+                we need some space here.</p>
+        </div>
+        <div class="instructions " style="margin-top: 10px;">
+            <h3>KITCHEN NOTE</h3>
+            <p>No peppers and onions. Drive around the block several times because these instructions can be lengthy and
+                we need some space here.</p>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const table = document.querySelector('.tablecontainer');
+        const rows = table.querySelectorAll('tr');
+        let isOdd = true;
+        let inListSection = false;
+
+        rows.forEach(row => {
+            if (row.classList.contains('row-head')) {
+                inListSection = false;
+                isOdd = true;
+            } else if (row.querySelector('ul')) {
+                if (!inListSection) {
+                    inListSection = true;
+                    isOdd = true;
+                }
+                row.classList.add(isOdd ? 'list-row-odd' : 'list-row-even');
+                isOdd = !isOdd;
+            } else {
+                row.classList.remove('list-row-odd', 'list-row-even');
+                inListSection = false;
+            }
+        });
+    });
+</script>
+
+</html>
